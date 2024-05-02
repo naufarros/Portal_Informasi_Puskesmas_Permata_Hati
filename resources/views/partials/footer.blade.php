@@ -30,7 +30,7 @@
 		</div>
 		<div class="row pb-3">
 			<div class="col-12 text-center small text-muted">
-				© 2024 Puskesmas Permata Hati. All rights reserved. <a class="d-block d-lg-inline text-muted mx-1" href="">Privacy Policy</a> <a class="d-block d-lg-inline text-muted mx-1" href="">Terms of Service</a>
+				© 2024 Puskesmas Permata All rights reserved. <a class="d-block d-lg-inline text-muted mx-1" href="">Privacy Policy</a> <a class="d-block d-lg-inline text-muted mx-1" href="">Terms of Service</a>
 			</div>
 		</div>
 	</div>
