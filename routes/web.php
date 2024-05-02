@@ -19,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::get('/', 'PageController@index')->name('page.index');
+    Route::get('/hubungi', 'PageController@hubungi')->name('page.hubungi');
+    Route::get('/galeri', 'PageController@galeri')->name('page.galeri');
 });
 
 Auth::routes();

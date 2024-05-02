@@ -27,7 +27,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent7">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item me-4">
-						<a class="nav-link" href="">Profile</a>
+						<a class="nav-link" href="{{route('page.index')}}">Profile</a>
 					</li>
 					<li class="nav-item dropdown me-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,10 +53,10 @@
                         </ul>
                     </li>   
                     <li class="nav-item me-4">
-						<a class="nav-link" href="">Gallery</a></a>
+						<a class="nav-link" href="{{route('page.galeri')}}">Galeri</a></a>
 					</li>  
 					<li class="nav-item me-4">
-						<a class="nav-link" href="">Hubungi Kami</a></a>
+						<a class="nav-link" href="{{route('page.hubungi')}}">Hubungi Kami</a></a>
 					</li>
 				</ul>
 			</div>
