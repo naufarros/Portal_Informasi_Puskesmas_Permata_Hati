@@ -34,11 +34,11 @@
                             Layanan
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Persyaratan Pelayanan</a></li>
-                            <li><a class="dropdown-item" href="#">Alur Pendaftaran</a></li>
+                            <li><a class="dropdown-item" href="{{route('page.pelayanan')}}">Persyaratan Pelayanan</a></li>
+                            <li><a class="dropdown-item" href="{{route('page.alur')}}">Alur Pendaftaran</a></li>
                             <li><a class="dropdown-item" href="#">Jadwal Pelayanan PerPoli</a></li>
-                            <li><a class="dropdown-item" href="#">Poli Umum</a></li>
-                            <li><a class="dropdown-item" href="#">Poli Gigi</a></li>
+                            <li><a class="dropdown-item" href="{{route('page.poliumum')}}">Poli Umum</a></li>
+                            <li><a class="dropdown-item" href="{{route('page.poligigi')}}">Poli Gigi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown me-4">

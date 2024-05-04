@@ -21,6 +21,10 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::get('/', 'PageController@index')->name('page.index');
     Route::get('/hubungi', 'PageController@hubungi')->name('page.hubungi');
     Route::get('/galeri', 'PageController@galeri')->name('page.galeri');
+    Route::get('/layanan', 'PageController@layanan')->name('page.pelayanan');
+    Route::get('/alur', 'PageController@alur')->name('page.alur');
+    Route::get('/poliumum', 'PageController@poliumum')->name('page.poliumum');
+    Route::get('/poligigi', 'PageController@poligigi')->name('page.poligigi');
 });
 
 Auth::routes();

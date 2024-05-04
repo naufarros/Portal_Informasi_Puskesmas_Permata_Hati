@@ -17,4 +17,21 @@ class PageController extends Controller
     public function galeri(){
         return view ('galeri');
     }
+
+    public function layanan(){
+        return view ('pelayanan');
+    }
+
+    public function alur(){
+        return view ('alur');
+    }
+
+    public function poliumum(){
+        return view ('poliumum');
+    }
+
+    public function poligigi(){
+        return view ('poligigi');
+    }
+    
 }
