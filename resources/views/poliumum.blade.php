@@ -14,7 +14,7 @@
 		<div class="row justify-content-center text-center mb-2 mb-lg-4">
 			<div class="col-12 col-lg-8 col-xxl-7 text-center mx-auto">
 				<span class="text-muted"></span>
-				<h2 class="display-5 fw-bold">JADWAL PELAYANAN POLI UMUM</h2>
+				<h2 class="display-6 fw-bold">JADWAL PELAYANAN POLI UMUM</h2>
 				<p class="lead"></p>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 				<div class="card text-center border-0 mb-3">
 					<div class="card-body p-3">
 						<div class="mb-4 mx-xl-5"><img class="img-fluid rounded-circle" src="{{asset('assets/dok1.png')}}"></div>
-						<h5 class="fw-bold">dr. Elis Yosepta, MARS</h5>
+						<h5 class="fw-bold">dr. Sarah Wijaya</h5>
 						<div class="text-muted mb-3">
 							Dokter
 						</div>
@@ -36,7 +36,7 @@
 				<div class="card text-center border-0 mb-3">
 					<div class="card-body p-3">
 						<div class="mb-4 mx-xl-5"><img class="img-fluid rounded-circle" src="{{asset('assets/dok2.png')}}"></div>
-						<h5 class="fw-bold">dr. Citra Ayuningtyas, MARS</h5>
+						<h5 class="fw-bold">dr. Lina Dewi</h5>
 						<div class="text-muted mb-3">
 							Dokter
 						</div>
@@ -49,7 +49,7 @@
 				<div class="card text-center border-0 mb-3">
 					<div class="card-body p-3">
 						<div class="mb-4 mx-xl-5"><img class="img-fluid rounded-circle" src="{{asset('assets/dok3.png')}}"></div>
-						<h5 class="fw-bold">dr. Teguh, MARS</h5>
+						<h5 class="fw-bold">dr. Ahmad Abdullah</h5>
 						<div class="text-muted mb-3">
 							Dokter
 						</div>
@@ -62,7 +62,7 @@
 				<div class="card text-center border-0 mb-3">
 					<div class="card-body p-3">
 						<div class="mb-4 mx-xl-5"><img class="img-fluid rounded-circle" src="{{asset('assets/dok4.png')}}"></div>
-						<h5 class="fw-bold">dr. William, MARS</h5>
+						<h5 class="fw-bold">dr. Kevin Tanujaya</h5>
 						<div class="text-muted mb-3">
 							Dokter
 						</div>

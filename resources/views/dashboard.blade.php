@@ -4,7 +4,7 @@
 	<div class="container pt-5">
 		<div class="row align-items-center">
 			<div class="col-lg-6 mb-4 mb-lg-0">
-				<h1 class="display-3 fw-bold"><span class="text-success">Profile Puskesmas </span> Permata Hati </h1>
+				<h1 class="display-3 fw-bold"><span class="text-success">Profil Puskesmas </span> Permata Hati </h1>
 			</div>
 			<div class="col-lg-6"><img alt="" class="img-fluid" src="{{asset('assets/imgprofile.png')}}"></div>
 		</div>

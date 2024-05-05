@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PasienController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/pasien/create', [PasienController::class, 'create'])->name('pasien.create');
+Route::post('/pasien', [PasienController::class, 'store'])->name('pasien.store');
+Route::get('/pasien', [PasienController::class, 'index'])->name('pasien.index');
+Route::get('/pasien/{nik}/edit', [PasienController::class, 'edit'])->name('pasien.edit');
+Route::put('/pasien/{nik}', [PasienController::class, 'update'])->name('pasien.update');
+Route::delete('/pasien/{nik}', [PasienController::class, 'destroy'])->name('pasien.destroy');

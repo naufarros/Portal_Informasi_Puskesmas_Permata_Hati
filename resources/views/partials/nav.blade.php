@@ -27,7 +27,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent7">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item me-4">
-						<a class="nav-link" href="{{route('page.index')}}">Profile</a>
+						<a class="nav-link" href="{{route('page.index')}}">Profil</a>
 					</li>
 					<li class="nav-item dropdown me-4">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,7 +36,6 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{route('page.pelayanan')}}">Persyaratan Pelayanan</a></li>
                             <li><a class="dropdown-item" href="{{route('page.alur')}}">Alur Pendaftaran</a></li>
-                            <li><a class="dropdown-item" href="#">Jadwal Pelayanan PerPoli</a></li>
                             <li><a class="dropdown-item" href="{{route('page.poliumum')}}">Poli Umum</a></li>
                             <li><a class="dropdown-item" href="{{route('page.poligigi')}}">Poli Gigi</a></li>
                         </ul>
