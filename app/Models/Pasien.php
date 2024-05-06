@@ -21,6 +21,7 @@ class Pasien extends Model
         'alamat',
         'nomor_telepon',
         'instalasi',
+        'penyakit',
     ];
 
     public $timestamps = true;

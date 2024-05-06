@@ -36,6 +36,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">{{ __('Penyakit') }}</div>
+                            <div class="card-body">
+                                <div class="mt-2">
+                                    <canvas id="penyakitChart" width="200" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,5 +107,38 @@
             responsive: true,
         }
     });
+
+    var diseaseData = @json($diseaseData);
+var diseaseChartCanvas = document.getElementById('penyakitChart').getContext('2d');
+
+// Definisikan palet warna yang ingin Anda gunakan
+var colors = [
+    '#ff9999',
+    '#99ff99',
+    '#9999ff',
+    '#ffcc99',
+    '#cc99ff',
+    '#99ccff',
+    '#ffff99',
+    '#99ffff',
+    '#ff99ff',
+    '#ccccff'
+];
+
+var diseaseChart = new Chart(diseaseChartCanvas, {
+    type: 'bar',
+    data: {
+        labels: diseaseData.labels,
+        datasets: [{
+            label: 'Jumlah Pasien',
+            data: diseaseData.counts,
+            backgroundColor: colors,
+        }]
+    },
+    options: {
+        responsive: true,
+    }
+});
+
 </script>
 @endsection

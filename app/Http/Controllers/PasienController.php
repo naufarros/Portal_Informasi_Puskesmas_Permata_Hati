@@ -21,21 +21,29 @@ class PasienController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'nik' => 'required|unique:pasien_ugdinap,nik',
-            'nama_lengkap' => 'required',
-            'umur' => 'required|numeric',
-            'jenis_kelamin' => 'required',
-            'alamat' => 'required',
-            'nomor_telepon' => 'required',
-            'instalasi' => 'required',
-        ]);
-
-        Pasien::create($request->all());
-
-        return redirect()->route('pasien.index')
-                        ->with('success','Pasien created successfully.');
+        try {
+            $request->validate([
+                'nik' => 'required|unique:pasien_ugdinap,nik',
+                'nama_lengkap' => 'required',
+                'umur' => 'required|numeric',
+                'jenis_kelamin' => 'required',
+                'alamat' => 'required',
+                'nomor_telepon' => 'required',
+                'instalasi' => 'required',
+                'penyakit' => 'required',
+            ]);
+    
+            Pasien::create($request->all());
+    
+            return redirect()->route('pasien.index')
+                            ->with('success','Pasien created successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()
+                             ->withInput()
+                             ->withErrors(['error' => $e->getMessage()]);
+        }
     }
+    
 
     public function edit($nik)
     {
@@ -52,6 +60,7 @@ class PasienController extends Controller
             'alamat' => 'required',
             'nomor_telepon' => 'required',
             'instalasi' => 'required',
+            'penyakit' => 'required',
         ]);
 
         $pasien = Pasien::find($nik);

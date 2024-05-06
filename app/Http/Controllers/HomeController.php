@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pasien;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -26,7 +27,9 @@ class HomeController extends Controller
         // Memformat data untuk chart instalasi
         $instalasiData = $this->formatInstalasiChartData($patients);
 
-        return view('home', compact('genderData', 'ageData', 'instalasiData'));
+        $diseaseData = $this->formatDiseaseChartData($patients);
+
+        return view('home', compact('genderData', 'ageData', 'instalasiData', 'diseaseData'));
     }
 
     // Metode untuk memformat data jenis kelamin
@@ -40,7 +43,7 @@ class HomeController extends Controller
             'female' => $femaleCount
         ];
     }
-
+    
     // Metode untuk memformat data instalasi
     private function formatInstalasiChartData($patients)
     {
@@ -71,4 +74,23 @@ class HomeController extends Controller
 
         return $ageData;
     }
+
+    // Metode untuk memformat data penyakit
+private function formatDiseaseChartData($patients)
+{
+    // Mengelompokkan data berdasarkan penyakit dan menghitung jumlah pasien untuk setiap penyakit
+    $diseaseData = $patients->groupBy('penyakit')->map(function ($group) {
+        return $group->count();
+    });
+
+    // Memisahkan nama penyakit dan total pasien
+    $diseaseLabels = $diseaseData->keys();
+    $diseaseCounts = $diseaseData->values();
+
+    return [
+        'labels' => $diseaseLabels,
+        'counts' => $diseaseCounts,
+    ];
+}
+
 }

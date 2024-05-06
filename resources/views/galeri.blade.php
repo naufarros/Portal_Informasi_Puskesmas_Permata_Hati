@@ -6,7 +6,7 @@
 			<div class="col-lg-8 col-xxl-7">
 				<span class="text-muted">Galeri</span>
 				<h2 class="display-5 fw-bold mb-3">Galeri Puskesmas</h2>
-				<p class="lead">Denah Puskesmas. Layanan. Situasi Pelayanan. Ruang Pelayanan.</p>
+				<p class="lead"></p>
 			</div>
 		</div>
 		<div class="carousel slide container pointer-event" data-bs-ride="carousel" id="galleryCarouse1">

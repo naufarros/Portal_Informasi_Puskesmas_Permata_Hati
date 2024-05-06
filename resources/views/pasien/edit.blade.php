@@ -55,6 +55,11 @@
                                 </select>
                             </div>
 
+                            <div class="form-group">
+                                <label for="penyakit">Penyakit</label>
+                                <input type="text" name="penyakit" class="form-control" id="penyakit" value="{{ $pasien->penyakit }}" required readonly>
+                            </div>
+
                             <button type="submit" class="btn btn-primary mt-3">Simpan</button>
                         @else
                             <div class="alert alert-danger mt-3" role="alert">

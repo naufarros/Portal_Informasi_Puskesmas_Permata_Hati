@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('nomor_telepon');
             $table->string('instalasi');
+            $table->string('penyakit');
             $table->timestamps();
         });
     }
