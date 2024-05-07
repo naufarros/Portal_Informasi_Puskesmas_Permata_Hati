@@ -57,7 +57,7 @@
 
                             <div class="form-group">
                                 <label for="penyakit">Penyakit</label>
-                                <input type="text" name="penyakit" class="form-control" id="penyakit" value="{{ $pasien->penyakit }}" required readonly>
+                                <input type="text" name="penyakit" class="form-control" id="penyakit" value="{{ $pasien->penyakit }}" required>
                             </div>
 
                             <button type="submit" class="btn btn-primary mt-3">Simpan</button>
