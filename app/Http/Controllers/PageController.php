@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Artikel;
 
 class PageController extends Controller
 {
@@ -32,6 +33,11 @@ class PageController extends Controller
 
     public function poligigi(){
         return view ('poligigi');
+    }
+
+    public function artikel(){
+        $artikels = Artikel::all();
+        return view('artikel', ['artikels' => $artikels]);
     }
     
 }

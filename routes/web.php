@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PasienController;
+use App\Http\Controllers\ArtikelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function() {
     Route::get('/alur', 'PageController@alur')->name('page.alur');
     Route::get('/poliumum', 'PageController@poliumum')->name('page.poliumum');
     Route::get('/poligigi', 'PageController@poligigi')->name('page.poligigi');
+    Route::get('/artikel', 'PageController@artikel')->name('page.artikel');
+    Route::get('/gambar/{id}', 'PageController@showImage')->name('gambar.show');
+
 });
 
 Auth::routes();
