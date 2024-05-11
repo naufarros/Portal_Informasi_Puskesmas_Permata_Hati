@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div id="layoutSidenav_content">
     <main>
@@ -8,43 +7,37 @@
                 <div class="row justify-content-center">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header">{{ __('Data Pasien') }}</div>
+                            <div class="card-header">{{ __('Data Artikel') }}</div>
                             <div class="card-body">
                                 <div class="mb-3">
-                                    <a href="{{ route('pasien.create') }}" class="btn btn-primary">Tambah Data Pasien</a>
+                                    <a href="{{ route('artikel.create') }}" class="btn btn-primary">Tambah Data Artikel</a>
                                 </div>
                                 <div class="table-responsive">
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>NIK</th>
-                                                <th>Nama Lengkap</th>
-                                                <th>Umur</th>
-                                                <th>Jenis Kelamin</th>
-                                                <th>Alamat</th>
-                                                <th>Nomor Telepon</th>
-                                                <th>Instalasi</th>
-                                                <th>Penyakit</th>
+                                                <th>Gambar</th>
+                                                <th>Kategori</th>
+                                                <th>Judul</th>
+                                                <th>Deskripsi</th>
+                                                <th>Tanggal Upload</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @php $no = 1 @endphp
-                                            @foreach ($pasiens as $pasien)
+                                            @foreach ($DataArtikels as $DataArtikel)
                                             <tr>
                                                 <td>{{ $no++ }}</td>
-                                                <td>{{ $pasien->nik }}</td>
-                                                <td>{{ $pasien->nama_lengkap }}</td>
-                                                <td>{{ $pasien->umur }}</td>
-                                                <td>{{ $pasien->jenis_kelamin }}</td>
-                                                <td>{{ $pasien->alamat }}</td>
-                                                <td>{{ $pasien->nomor_telepon }}</td>
-                                                <td>{{ $pasien->instalasi }}</td>
-                                                <td>{{ $pasien->penyakit }}</td>
+                                                <td><img src="{{ $DataArtikel->gambar }}" alt="Gambar Artikel" style="width: 250px; height: 150px; object-fit: cover;"></td>
+                                                <td>{{ $DataArtikel->kategori }}</td>
+                                                <td>{{ $DataArtikel->judul }}</td>
+                                                <td>{{ $DataArtikel->deskripsi }}</td>
+                                                <td>{{ $DataArtikel->tanggal_upload }}</td>
                                                 <td>
-                                                    <a href="{{ route('pasien.edit',$pasien->nik) }}" class="btn btn-primary mb-2">Edit</a>
-                                                    <form action="{{ route('pasien.destroy', $pasien->nik) }}" method="POST" style="display: inline-block;">
+                                                    <a href="{{ route('artikel.edit', $DataArtikel->id) }}" class="btn btn-primary mb-2">Edit</a>
+                                                    <form action="{{ route('artikel.destroy', $DataArtikel->id) }}" method="POST" style="display: inline-block;">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger">Hapus</button>
@@ -54,7 +47,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-                                    {!! $pasiens->withQueryString()->links('pagination::bootstrap-5') !!}
+                                    {!! $DataArtikels->withQueryString()->links('pagination::bootstrap-5') !!}
                                 </div>
                             </div>
                         </div>

@@ -9,7 +9,7 @@ class PasienController extends Controller
 {
     public function index()
     {
-        $pasiens = Pasien::paginate(5);
+        $pasiens = Pasien::paginate(4);
 
         return view('pasien', ['pasiens' => $pasiens]);
     }

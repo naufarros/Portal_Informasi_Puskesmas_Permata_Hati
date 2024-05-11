@@ -9,10 +9,10 @@ class Artikel extends Model
 {
     use HasFactory;
 
-    protected $table = 'artikel'; // Nama tabel dalam database
+    protected $table = 'artikel';
 
     protected $fillable = [
-        'gambar', 'kategori', 'judul', 'deskripsi', 'tanggal_upload'
+        'gambar', 'kategori', 'judul', 'deskripsi', 'tanggal_upload', 'link_artikel'
     ];
 
     protected $dateFormat = 'Y-m-d';

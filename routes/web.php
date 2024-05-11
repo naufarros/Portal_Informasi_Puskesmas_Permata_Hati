@@ -43,3 +43,11 @@ Route::get('/pasien', [PasienController::class, 'index'])->name('pasien.index');
 Route::get('/pasien/{nik}/edit', [PasienController::class, 'edit'])->name('pasien.edit');
 Route::put('/pasien/{nik}', [PasienController::class, 'update'])->name('pasien.update');
 Route::delete('/pasien/{nik}', [PasienController::class, 'destroy'])->name('pasien.destroy');
+
+
+Route::get('/data-artikel', [ArtikelController::class, 'index'])->name('artikel.index');
+Route::get('/data-artikel/create', [ArtikelController::class, 'create'])->name('artikel.create');
+Route::post('/data-artikel', [ArtikelController::class, 'store'])->name('artikel.store');
+Route::get('/data-artikel/{artikel}/edit', [ArtikelController::class, 'edit'])->name('artikel.edit');
+Route::put('/data-artikel/{artikel}', [ArtikelController::class, 'update'])->name('artikel.update');
+Route::delete('/data-artikel/{artikel}', [ArtikelController::class, 'destroy'])->name('artikel.destroy');

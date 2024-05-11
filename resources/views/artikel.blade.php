@@ -13,7 +13,7 @@
         <div class="row">
             @foreach($artikels as $artikel)
             <div class="col-md-6">
-                <div class="card border-0">
+                <div class="card border-0" style="background-color: #E5EEE6;">
                     <a href="{{$artikel->link_artikel}}" target="_blank"><img alt="" class="img-fluid rounded" style="width: 550px; height: 350px; object-fit: cover;" src="{{ $artikel->gambar }}"></a>
                     <div class="card-body px-0 mb-3">
                         <div class="d-flex">

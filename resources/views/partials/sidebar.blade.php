@@ -55,9 +55,9 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
                     Data Pasien
                 </a>
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{route('artikel.index')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                    Tables
+                    Data Artikel
                 </a>
             </div>
         </div>
