@@ -92,5 +92,4 @@ private function formatDiseaseChartData($patients)
         'counts' => $diseaseCounts,
     ];
 }
-
 }
