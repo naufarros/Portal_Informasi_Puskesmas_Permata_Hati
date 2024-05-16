@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pasien;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -29,7 +30,9 @@ class HomeController extends Controller
 
         $diseaseData = $this->formatDiseaseChartData($patients);
 
-        return view('home', compact('genderData', 'ageData', 'instalasiData', 'diseaseData'));
+        $visitData = $this->formatVisitChartData($patients);
+
+        return view('home', compact('genderData', 'ageData', 'instalasiData', 'diseaseData', 'visitData'));
     }
 
     // Metode untuk memformat data jenis kelamin
@@ -92,4 +95,16 @@ private function formatDiseaseChartData($patients)
         'counts' => $diseaseCounts,
     ];
 }
+
+private function formatVisitChartData($patients)
+    {
+        $monthlyVisits = array_fill(0, 12, 0); // Array untuk menyimpan jumlah kunjungan per bulan
+
+        foreach ($patients as $patient) {
+            $month = Carbon::parse($patient->tanggal_kunjungan)->month;
+            $monthlyVisits[$month - 1]++; // Menambah jumlah kunjungan pada bulan yang sesuai
+        }
+
+        return $monthlyVisits;
+    }
 }

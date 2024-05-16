@@ -31,6 +31,7 @@ class PasienController extends Controller
                 'nomor_telepon' => 'required',
                 'instalasi' => 'required',
                 'penyakit' => 'required',
+                'tanggal_kunjungan' => 'required|date',
             ]);
     
             Pasien::create($request->all());
@@ -61,6 +62,7 @@ class PasienController extends Controller
             'nomor_telepon' => 'required',
             'instalasi' => 'required',
             'penyakit' => 'required',
+            'tanggal_kunjungan' => 'required|date',
         ]);
 
         $pasien = Pasien::find($nik);

@@ -38,6 +38,16 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card mt-4">
+                            <div class="card-header">{{ __('Kunjungan Pasien per Bulan') }}</div>
+                            <div class="card-body">
+                                <div class="mt-2">
+                                    <canvas id="visitChart" width="200" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="col-md-4">
+                        <div class="card mt-4">
                             <div class="card-header">{{ __('10 Besar Penyakit') }}</div>
                             <div class="card-body">
                                 <div class="mt-2">
@@ -140,5 +150,28 @@ var diseaseChart = new Chart(diseaseChartCanvas, {
     }
 });
 
+var visitData = @json($visitData);
+    var visitChartCanvas = document.getElementById('visitChart').getContext('2d');
+    var visitChart = new Chart(visitChartCanvas, {
+        type: 'line',
+        data: {
+            labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+            datasets: [{
+                label: 'Jumlah Kunjungan Pasien per Bulan',
+                data: visitData,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 </script>
 @endsection

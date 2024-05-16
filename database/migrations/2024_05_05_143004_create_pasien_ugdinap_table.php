@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nomor_telepon');
             $table->string('instalasi');
             $table->string('penyakit');
+            $table->date('tanggal_kunjungan');
             $table->timestamps();
         });
     }

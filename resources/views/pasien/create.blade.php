@@ -59,6 +59,11 @@
                             <input type="text" name="penyakit" class="form-control" id="penyakit" required>
                         </div>
 
+                        <div class="form-group">
+                            <label for="tanggal_kunjungan">Tanggal Kunjungan</label>
+                            <input type="date" name="tanggal_kunjungan" class="form-control" id="tanggal_kunjungan" required>
+                        </div>
+
                         <button type="submit" class="btn btn-primary mt-3">Tambah</button>
                     </form>
                 </div>

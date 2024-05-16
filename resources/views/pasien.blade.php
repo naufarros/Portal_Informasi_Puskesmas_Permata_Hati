@@ -26,6 +26,7 @@
                                                 <th>Nomor Telepon</th>
                                                 <th>Instalasi</th>
                                                 <th>Penyakit</th>
+                                                <th>Tanggal Kunjungan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -42,6 +43,7 @@
                                                 <td>{{ $pasien->nomor_telepon }}</td>
                                                 <td>{{ $pasien->instalasi }}</td>
                                                 <td>{{ $pasien->penyakit }}</td>
+                                                <td>{{ $pasien->tanggal_kunjungan}}</td>
                                                 <td>
                                                     <a href="{{ route('pasien.edit',$pasien->nik) }}" class="btn btn-primary mb-2">Edit</a>
                                                     <form action="{{ route('pasien.destroy', $pasien->nik) }}" method="POST" style="display: inline-block;">

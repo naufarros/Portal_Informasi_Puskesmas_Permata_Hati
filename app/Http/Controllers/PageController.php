@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Artikel;
 use App\Models\Pasien;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -40,80 +41,22 @@ class PageController extends Controller
         
         $patients = Pasien::all();
 
-        // Memformat data untuk chart jenis kelamin
-        $genderData = $this->formatGenderChartData($patients);
+        $visitData = $this->formatVisitChartData($patients);
 
-        // Memformat data untuk chart umur
-        $ageData = $this->formatAgeChartData($patients);
-
-        // Memformat data untuk chart instalasi
-        $instalasiData = $this->formatInstalasiChartData($patients);
-
-        $diseaseData = $this->formatDiseaseChartData($patients);
-
-        return view('grafik', compact('genderData', 'ageData', 'instalasiData', 'diseaseData'));
+        return view('grafik', compact('visitData'));
     }
 
-    // Metode untuk memformat data jenis kelamin
-    private function formatGenderChartData($patients)
+    private function formatVisitChartData($patients)
     {
-        $maleCount = $patients->where('jenis_kelamin', 'Laki-laki')->count();
-        $femaleCount = $patients->where('jenis_kelamin', 'Perempuan')->count();
+        $monthlyVisits = array_fill(0, 12, 0); // Array untuk menyimpan jumlah kunjungan per bulan
 
-        return [
-            'male' => $maleCount,
-            'female' => $femaleCount
-        ];
-    }
-    
-    // Metode untuk memformat data instalasi
-    private function formatInstalasiChartData($patients)
-    {
-        $gawatdaruratCount = $patients->where('instalasi', 'Gawat Darurat')->count();
-        $rawatjalanCount = $patients->where('instalasi', 'Rawat Jalan')->count();
-        $rawatinapCount = $patients->where('instalasi', 'Rawat Inap')->count();
-    
-        return [
-            'gawatdarurat' => $gawatdaruratCount,
-            'rawatjalan' => $rawatjalanCount,
-            'rawatinap' => $rawatinapCount
-        ];
-    }
-
-    // Metode untuk memformat data umur
-    private function formatAgeChartData($patients)
-    {
-        $ageData = [];
-
-        // Menghitung jumlah pasien berdasarkan rentang umur
-        $ageGroups = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90];
-        foreach ($ageGroups as $index => $age) {
-            if ($index < count($ageGroups) - 1) {
-                $count = $patients->whereBetween('umur', [$age, $ageGroups[$index + 1] - 1])->count();
-                array_push($ageData, $count);
-            }
+        foreach ($patients as $patient) {
+            $month = Carbon::parse($patient->tanggal_kunjungan)->month;
+            $monthlyVisits[$month - 1]++; // Menambah jumlah kunjungan pada bulan yang sesuai
         }
 
-        return $ageData;
+        return $monthlyVisits;
     }
-
-    // Metode untuk memformat data penyakit
-private function formatDiseaseChartData($patients)
-{
-    // Mengelompokkan data berdasarkan penyakit dan menghitung jumlah pasien untuk setiap penyakit
-    $diseaseData = $patients->groupBy('penyakit')->map(function ($group) {
-        return $group->count();
-    });
-
-    // Memisahkan nama penyakit dan total pasien
-    $diseaseLabels = $diseaseData->keys();
-    $diseaseCounts = $diseaseData->values();
-
-    return [
-        'labels' => $diseaseLabels,
-        'counts' => $diseaseCounts,
-    ];
-}
 
     public function tren(){
         return view('tren');
