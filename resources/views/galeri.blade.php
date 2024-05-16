@@ -21,10 +21,10 @@
 				</div>
 				<div class="carousel-item">
 					<div class="row gy-4">
-						<div class="col-md-3"><img alt="" class="img-fluid rounded-1" src="https://freefrontend.dev/assets/square.png"></div>
-						<div class="col-md-3"><img alt="" class="img-fluid rounded-1" src="https://freefrontend.dev/assets/square.png"></div>
-						<div class="col-md-3"><img alt="" class="img-fluid rounded-1" src="https://freefrontend.dev/assets/square.png"></div>
-						<div class="col-md-3"><img alt="" class="img-fluid rounded-1" src="https://freefrontend.dev/assets/square.png"></div>
+						<div class="col-md-3"><img alt="" class="img-fluid rounded-1" src="{{asset('assets/ugd.jpg')}}"></div>
+						<div class="col-md-3"><img alt="" class="img-fluid rounded-1" src="{{asset('assets/farmasi.jpg')}}"></div>
+						<div class="col-md-3"><img alt="" class="img-fluid rounded-1" src="{{asset('assets/bed.jpg')}}"></div>
+						<div class="col-md-3"><img alt="" class="img-fluid rounded-1" src="{{asset('assets/kmp.jpeg')}}"></div>
 					</div>
 				</div>
 			</div><button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#galleryCarouse1" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button> <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#galleryCarouse1" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button>
