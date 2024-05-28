@@ -78,23 +78,21 @@ class HomeController extends Controller
         return $ageData;
     }
 
-    // Metode untuk memformat data penyakit
-private function formatDiseaseChartData($patients)
-{
-    // Mengelompokkan data berdasarkan penyakit dan menghitung jumlah pasien untuk setiap penyakit
-    $diseaseData = $patients->groupBy('penyakit')->map(function ($group) {
-        return $group->count();
-    });
-
-    // Memisahkan nama penyakit dan total pasien
-    $diseaseLabels = $diseaseData->keys();
-    $diseaseCounts = $diseaseData->values();
-
-    return [
-        'labels' => $diseaseLabels,
-        'counts' => $diseaseCounts,
-    ];
-}
+    private function formatDiseaseChartData($patients) {
+        $diseaseData = $patients->groupBy('penyakit')->map(function ($group) {
+            return $group->count();
+        });
+    
+        $topDiseases = $diseaseData->sortDesc()->take(10);
+    
+        $diseaseLabels = $topDiseases->keys();
+        $diseaseCounts = $topDiseases->values();
+    
+        return [
+            'labels' => $diseaseLabels,
+            'counts' => $diseaseCounts,
+        ];
+    }    
 
 private function formatVisitChartData($patients)
     {

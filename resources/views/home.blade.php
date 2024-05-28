@@ -48,7 +48,7 @@
                     </div>                    
                     <div class="col-md-4">
                         <div class="card mt-4">
-                            <div class="card-header">{{ __('10 Besar Penyakit') }}</div>
+                            <div class="card-header">{{ __('Tren Penyakit') }}</div>
                             <div class="card-body">
                                 <div class="mt-2">
                                     <canvas id="penyakitChart" width="200" height="200"></canvas>

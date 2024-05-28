@@ -58,9 +58,29 @@ class PageController extends Controller
         return $monthlyVisits;
     }
 
-    public function tren(){
-        return view('tren');
+    public function tren() {
+        $patients = Pasien::all();
+        $diseaseData = $this->formatDiseaseChartData($patients);
+        return view('tren', compact('diseaseData'));
     }
+    
+    private function formatDiseaseChartData($patients) {
+        // Mengelompokkan pasien berdasarkan penyakit dan menghitung jumlahnya
+        $diseaseData = $patients->groupBy('penyakit')->map(function ($group) {
+            return $group->count();
+        });
+    
+        // Mengambil 10 penyakit terbanyak
+        $topDiseases = $diseaseData->sortDesc()->take(10);
+    
+        $diseaseLabels = $topDiseases->keys();
+        $diseaseCounts = $topDiseases->values();
+    
+        return [
+            'labels' => $diseaseLabels,
+            'counts' => $diseaseCounts,
+        ];
+    }    
 
     public function jumlahtt(){
         return view('jumlahtt');

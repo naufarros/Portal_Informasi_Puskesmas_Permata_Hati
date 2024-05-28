@@ -73,9 +73,9 @@
             return;
         }
 
-        const formattedMessage = `Halo, perkenalkan saya ${nama}. ${pesan}`;
+        const formattedMessage = `Halo, perkenalkan saya ${nama}. Pesan: ${pesan}`;
 
-        const nomorTujuan = '6285156730320';
+        const nomorTujuan = '6283189891008';
         const urlWhatsApp = `https://wa.me/${nomorTujuan}?text=${encodeURIComponent(formattedMessage)}`;
 
         window.open(urlWhatsApp, '_blank');
