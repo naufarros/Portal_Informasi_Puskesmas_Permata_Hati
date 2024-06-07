@@ -6,7 +6,7 @@
 			<div class="col-md-12">
 				<div class="text-center">
 					<span class="text-muted">GRAFIK</span>
-					<h2 class="display-5 fw-bold">GRAFIK TREN PENYAKIT</h2>
+					<h2 class="display-5 fw-bold">GRAFIK TREN PENYAKIT 2024</h2>
 					{{-- <p class="lead">Lorem ipsum dolor, sit amet elit Quamnitm veniam dicta architecto, quos id nemo minima nulla ducimus offici nulla ducimus officiis! Lorem ipsum dolor, sit amet elit Quamnitm veniam dicta architecto.</p> --}}
                     <div class="container mt-2">
                         <div class="justify-content-center">

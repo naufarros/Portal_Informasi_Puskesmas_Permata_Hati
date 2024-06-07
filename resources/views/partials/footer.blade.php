@@ -21,7 +21,7 @@
 						<a class="dropdown-toggle text-dark text-decoration-none me-lg-3" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Informasi</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Grafik</a></li>
-                            <li><a class="dropdown-item" href="#">Info Kelas dan Tempat Tidur</a></li>
+                            <li><a class="dropdown-item" href="#">Jumlah Tempat Tidur dan Mobil Ambulans</a></li>
                             <li><a class="dropdown-item" href="#">Tren Penyakit</a></li>
                             <li><a class="dropdown-item" href="#">Artikel</a></li>
                         </ul>

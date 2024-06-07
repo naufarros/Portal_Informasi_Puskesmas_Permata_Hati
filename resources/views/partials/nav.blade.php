@@ -54,7 +54,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{route('page.grafik')}}">Grafik</a></li>
-                            <li><a class="dropdown-item" href="{{route('page.jumlahtt')}}">Jumlah Tempat Tidur</a></li>
+                            <li><a class="dropdown-item" href="{{route('page.jumlahtt')}}">Jumlah Tempat Tidur & Mobil Ambulans</a></li>
                             <li><a class="dropdown-item" href="{{route('page.tren')}}">Tren Penyakit</a></li>
                             <li><a class="dropdown-item" href="{{route('page.artikel')}}">Artikel</a></li>
                         </ul>
